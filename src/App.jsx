@@ -1,11 +1,10 @@
 import React from 'react'
 import './design/main.css'
-import Hero from './components/hero'
-
+import HeroSection from './components/HeroSection'
 const App = () => {
   return (
     <>
-     <Hero></Hero>
+     <HeroSection></HeroSection>
     </>
   )
 }

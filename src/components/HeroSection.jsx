@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Hero = () => {
+const HeroSection = () => {
   return (
     <>
-        <section className='text-3xl font-bold bg-red-800'
+       <section className='text-3xl font-bold bg-green-900'
         //  style={{
         //     width : "100%" ,
         //     height: "60vh" ,
@@ -22,4 +22,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default HeroSection
