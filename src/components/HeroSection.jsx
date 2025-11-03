@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <>
       <section
-        className="relative w-full h-[100vh] bg-cover bg-center bg-no-repeat"
+        className="relative w-full md:h-[100vh] sm:h-[60vh] bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('/HeroSection.png')`,
         }}
@@ -15,7 +15,7 @@ const HeroSection = () => {
             Luxury & Comfort, Just a Click Away
           </h1>
           <p className="sm:text-lg md:text-2xl font-light">
-           Best prices, best comfort, all in one place
+            Best prices, best comfort, all in one place
           </p>
         </div>
       </section>
