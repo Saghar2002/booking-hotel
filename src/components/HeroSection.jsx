@@ -1,7 +1,10 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 
 const HeroSection = () => {
   const [openMenu, setOpenMenu] = useState("false");
+
+  const navItems = ["Home", "Hotel", "Offer", "Contact"];
 
   return (
     <>
@@ -14,9 +17,11 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black/60 "></div>
 
         {/* header content */}
-
+        {/* 
         <header className="relative z-10 flex justify-between items-center px-5 py-6 text-white">
-          <div className="font bold px-4">October Hotel</div>
+          <a href="#" className='px-4 py-2 font-semibold transition-all duration-200 hover:drop-shadow hover:bg-white/10 rounded'>
+            October Hotel
+          </a>
           <nav className="hidden md:flex space-x-6 px-5">
             <a
               href="#"
@@ -44,14 +49,47 @@ const HeroSection = () => {
             </a>
           </nav>
 
-          {/* Mobile hamburg menu */}
+          Mobile hamburg menu
           <button
             className="md:hidden text-2xl"
             onClick={() => setOpenMenu(!openMenu)}
           >
             ☰
           </button>
-        </header>
+        </header> */}
+
+        <motion.header
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="relative z-10 flex justify-between items-center px-6 md:px-10 py-4 text-white"
+        >
+          <a
+            href="#"
+            className="px-4 py-2 font-semibold transition-all duration-200 hover:drop-shadow hover:bg-white/10 rounded"
+          >
+            October Hotel
+          </a>
+
+          {/* Desktop nav */}
+
+          <nav className="hidden md:flex space-x-6 px-5">
+            {navItems.map((item, i) => (
+              <a href="#" key={i}>
+                {item}
+              </a>
+            ))}
+          </nav>
+
+          {/* Mobile Menu Icon */}
+
+          <button
+            className="md:hidden text-2xl"
+            onClick={() => setOpenMenu(!openMenu)}
+          >
+            ☰
+          </button>
+        </motion.header>
 
         {/* mobile menu */}
 
@@ -73,13 +111,33 @@ const HeroSection = () => {
         )}
 
         {/* hero section */}
+
         <div className="relative z-10  flex flex-col justify-center items-center h-full text-center text-white px-4">
-          <h1 className="sm:text-2xl md:text-4xl font-bold mb-4">
+          {/* <h1 className="sm:text-2xl md:text-4xl font-bold mb-2">
             Luxury & Comfort, Just a Click Away
           </h1>
-          <p className="sm:text-lg md:text-2xl font-light">
+          <p className="sm:text-lg md:text-2xl font-light mb-10">
             Best prices, best comfort, all in one place
-          </p>
+          </p> */}
+
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-xl md:text-5xl font-bold sm:font-semibold mb-3"
+          >
+            Luxury & Comfort, Just a Click Away
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="sm:text-lg md:text-2xl font-light mb-10"
+          >
+
+            Best prices, best comfort, all in one place
+          </motion.p>
         </div>
       </section>
     </>
