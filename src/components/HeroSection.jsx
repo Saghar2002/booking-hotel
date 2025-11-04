@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 
 const HeroSection = () => {
-  const [openMenu, setOpenMenu] = useState("false");
+  const [openMenu, setOpenMenu] = useState(false);
 
   const navItems = ["Home", "Hotel", "Offer", "Contact"];
 
@@ -93,7 +93,7 @@ const HeroSection = () => {
 
         {/* mobile menu */}
 
-        {openMenu && (
+        {/* {openMenu && (
           <nav className="md:hidden absolute z-20 top-0left-0 w-full bg-black/80 flex flex-col items-center space-x-4 py-6 text-white">
             <a href="#" className="w-full text-center py-2 hover: bg-white/20">
               Home
@@ -108,7 +108,51 @@ const HeroSection = () => {
               Contact
             </a>
           </nav>
-        )}
+        )} */}
+
+        <AnimatePresence >
+          {openMenu && (
+            <>
+              {/* background overlay */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.6 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black z-30"
+                onClick={() => setOpenMenu(false)}
+              ></motion.div>
+
+              {/* sliding menu */}
+              <motion.div
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ duration: 0.4 }}
+                className="fixed right-0 top-0 w-[70%] h-full bg-white text-black p-6 z-40 flex flex-col space-y-6 text-lg"
+              >
+                <button
+                  className="self-end text-2xl mb-4"
+                  onClick={() => setOpenMenu(false)}
+                >
+                  ✖
+                </button>
+
+                {navItems.map((item, i) => (
+                  <motion.a
+                    key={i}
+                    href="#"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="block hover:text-blue-600"
+                  >
+                    {item}
+                  </motion.a>
+                ))}
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
 
         {/* hero section */}
 
@@ -135,7 +179,6 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="sm:text-lg md:text-2xl font-light mb-10"
           >
-
             Best prices, best comfort, all in one place
           </motion.p>
         </div>
