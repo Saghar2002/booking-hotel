@@ -9,8 +9,8 @@ const BookButton = ({ text = "Book Now", onClick }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 0.6,
-        delay: 0.35,
+        duration: 0.7,
+        delay: 0.2,
         type: "spring",
         stiffness: 200,
         damping: 14,
@@ -25,8 +25,7 @@ const BookButton = ({ text = "Book Now", onClick }) => {
       
           sm:px-7 sm:py-3 sm:text-base   /* تبلت */
           md:px-9 md:py-4 md:text-lg     /* دسکتاپ */
-
-        //   md:initial-y-[40px]  /* فقط دسکتاپ */
+ 
       
           mt-6 flex items-center gap-2
           transition-all duration-300

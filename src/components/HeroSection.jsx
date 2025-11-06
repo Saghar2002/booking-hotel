@@ -105,7 +105,6 @@ const HeroSection = () => {
         {/* hero section */}
 
         <div className="relative z-10  flex flex-col justify-center items-center h-full text-center text-white px-4">
-
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
