@@ -105,12 +105,6 @@ const HeroSection = () => {
         {/* hero section */}
 
         <div className="relative z-10  flex flex-col justify-center items-center h-full text-center text-white px-4">
-          {/* <h1 className="sm:text-2xl md:text-4xl font-bold mb-2">
-            Luxury & Comfort, Just a Click Away
-          </h1>
-          <p className="sm:text-lg md:text-2xl font-light mb-10">
-            Best prices, best comfort, all in one place
-          </p> */}
 
           <motion.h1
             initial={{ opacity: 0, y: 25 }}

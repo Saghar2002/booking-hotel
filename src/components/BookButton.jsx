@@ -32,7 +32,7 @@ const BookButton = ({ text = "Book Now", onClick }) => {
           transition-all duration-300
         "
     >
-      Book Now
+      {text}
       <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
         →
       </span>
