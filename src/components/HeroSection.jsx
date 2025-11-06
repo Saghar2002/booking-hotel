@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
+import BookButton from "./BookButton";
 
 const HeroSection = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -9,7 +10,11 @@ const HeroSection = () => {
   return (
     <>
       <section
-        className="relative w-full md:h-[100vh] sm:h-[80vh] bg-cover bg-center bg-no-repeat"
+        className="relative w-full 
+        h-[85vh]         /* موبایل */
+        sm:h-[90vh]      /* تبلت */
+        md:h-[100vh]     /* دسکتاپ */ 
+        bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('/HeroSection.png')`,
         }}
@@ -17,7 +22,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black/60 "></div>
 
         {/* header content */}
-       
+
         <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +58,7 @@ const HeroSection = () => {
 
         {/* mobile menu */}
 
-        <AnimatePresence >
+        <AnimatePresence>
           {openMenu && (
             <>
               {/* background overlay */}
@@ -124,6 +129,7 @@ const HeroSection = () => {
           >
             Best prices, best comfort, all in one place
           </motion.p>
+          <BookButton />
         </div>
       </section>
     </>
